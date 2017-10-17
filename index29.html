@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+</head>
+<body>
+    <input type="text" name="" id="input1">
+    <br>
+    <button id="button1">클릭</button>
+    <p id="demo"></p>
+    <script>
+    document.getElementById("button1").onclick = show;
+    function show() {
+
+        var num = Number(document.getElementById("input1").value);
+        var result = "";
+        for (var i = 1; i <= num; i++) {
+            for (var j = 1; j <= i; j++) {
+                result += "*";
+            }
+            result += "<br>";
+        }
+        document.getElementById("demo").innerHTML = result;
+
+
+    }
+
+    
+    
+    
+    </script>
+</body>
+</html>

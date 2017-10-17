@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        .section {
+            display: inline-block;
+            border: 1px solid black;
+            padding: 17px;
+            margin: 2px;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="number" name="" id="input1" min="2" max="9">
+    <br>
+    <button id="button1">클릭</button>
+    <div id="div1"></div>
+
+    <script>
+        document.getElementById("button1").onclick = show;
+        function show() {
+            var except = document.getElementById("input1").value;
+            var txt = "";
+            for (var num = 2; num <= 9; num ++) {
+                if (num != except) {
+                    txt += "<div class='section'>";
+                    for (var i = 1; i <= 9; i++) {
+                        txt += "<p>" + num + " X " + i + " = " + (i * num) + "</p>";
+                    }
+                    txt += "</div>";
+                }
+            }
+            document.getElementById("div1").innerHTML = txt;
+        }
+
+    </script>
+</body>
+
+</html>

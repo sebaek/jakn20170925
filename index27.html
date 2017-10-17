@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+</head>
+<body>
+    <input type="text" name="" id="input1">
+    <br>
+    <button id="button1">클릭</button>
+    <p id="demo"></p>
+    <script>
+    document.getElementById("button1").onclick = show;
+    function show() {
+
+        var text = document.getElementById("input1").value;
+        var array = text.split(",");
+        array.sort(function(a, b) {
+            return a - b;
+        });
+
+        document.getElementById("demo").innerHTML = array;
+    }
+
+    
+    
+    
+    </script>
+</body>
+</html>

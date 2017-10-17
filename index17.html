@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+<head>
+    <style>
+    p {
+        display: inline-block;
+        width: 100px;
+        height: 100px;
+        background-color: lime;
+        border-radius: 50%;
+        text-align: center;
+        line-height: 100px;
+        font-size: 40px;
+        font-weight: 900;
+    }
+    </style>
+</head>
+<body>
+    <button id="button1">클릭</button> <br>
+    <p id="p0"></p>
+    <p id="p1"></p>
+    <p id="p2"></p>
+    <p id="p3"></p>
+    <p id="p4"></p>
+    <p id="p5"></p>
+    
+    <script>
+    var array = new Array(45);
+    array.fill();
+    array = array.map(function(item, index) {return index + 1;})
+
+    document.getElementById("button1").onclick = start;
+
+    function start() {
+        array.sort(function(a, b) {return 0.5 - Math.random();});
+        var lotto = array.slice(0, 6);
+        lotto.forEach(function(item, index) {
+            document.getElementById("p" + index).innerHTML = item;
+        });
+
+    }
+
+
+
+
+    </script>
+</body>
+</html>

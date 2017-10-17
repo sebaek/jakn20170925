@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+</head>
+<body>
+    <input type="number" name="" id="input1">
+    <br>
+    <button id="button1">리셋</button>
+    <button id="button2">확인</button>
+    <p id="demo"></p>
+    <script>
+    document.getElementById("button1").onclick = setRandomNumber;
+    document.getElementById("button2").onclick = check;
+    var randomNumber = 0;
+    function setRandomNumber() {
+        randomNumber = Math.floor(Math.random() * 100) + 1;
+    }
+
+    function check() {
+        var num = Number(document.getElementById("input1").value);
+        if (num < randomNumber) {
+            document.getElementById("demo").innerHTML = "too small";
+        } else if (num > randomNumber) {
+            document.getElementById("demo").innerHTML = "too large";
+        } else {
+            document.getElementById("demo").innerHTML = "correct.";
+        }
+    }
+    </script>
+</body>
+</html>

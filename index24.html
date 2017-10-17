@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+    <input type="text" name="" id="input1">
+    <br>
+    <button id="button1">클릭</button>
+    <br>
+    <p id="demo"></p>
+    <script>
+    document.getElementById("button1").onclick = reverse;
+    function reverse() {
+        var text = document.getElementById("input1").value;
+        var arry = text.split("");
+        arry.reverse();
+        text = arry.join("");
+        document.getElementById("demo").innerHTML = text;
+
+    }
+    
+    
+    </script>
+</body>
+</html>

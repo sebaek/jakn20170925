@@ -1,0 +1,92 @@
+<!doctype html>
+<html>
+<head>
+<style>
+    table, th, td {
+        text-align: center;
+        border: 1px solid black;
+    }
+    th, td {
+        height: 30px;   
+    }
+    table {
+        table-layout: fixed;
+        width: 100%;
+        border-collapse: collapse;
+    }
+    td:nth-child(3),
+    td:nth-child(5) {
+        background-color: grey;
+    }
+    th:nth-child(1) {
+        width: 10%;
+    }
+</style>
+</head>
+<body onload="addEventListenerToCells();">
+<table>
+    <tr>
+        <th></th>
+        <th id="hcol1" class="col1">월</th>
+        <th id="hcol2" class="col2">화</th>
+        <th id="hcol3" class="col3">수</th>
+        <th id="hcol4" class="col4">목</th>
+        <th id="hcol5" class="col5">금</th>
+    </tr>
+    <tr>
+        <th>점심</th>
+        <td class="col1">볶음밥</td>
+        <td class="col2">새우볶음밥</td>
+        <td class="col3">햄버거</td>
+        <td class="col4">랍스타</td>
+        <td class="col5">부페</td>
+    </tr>
+    <tr>
+        <th >저녁</th>
+        <td class="col1">햄버거</td>
+        <td class="col2">피자</td>
+        <td class="col3">가츠동</td>
+        <td class="col4">고기</td>
+        <td class="col5">초밥</td>
+    </tr>
+    
+</table>
+
+<script>
+
+function addEventListenerToCells() {
+    var col1 = document.getElementsByClassName("col1");
+    var col2 = document.getElementsByClassName("col2");
+    var col3 = document.getElementsByClassName("col3");
+    var col4 = document.getElementsByClassName("col4");
+    var col5 = document.getElementsByClassName("col5");
+    addEventListenerToColumns(col1);
+    addEventListenerToColumns(col2);
+    addEventListenerToColumns(col3);
+    addEventListenerToColumns(col4);
+    addEventListenerToColumns(col5);
+
+}
+function addEventListenerToColumns(col) {
+    var i;
+    for (i = 0; i < col.length; i++) {
+        var hid = "h" + col[i].className;
+        col[i].addEventListener("mouseenter", function() {
+            document.getElementById(hid).style.backgroundColor = "black";
+            document.getElementById(hid).style.color = "white";
+        });
+        col[i].addEventListener("mouseleave", function() {
+            document.getElementById(hid).style.backgroundColor = "white";
+            document.getElementById(hid).style.color = "black";
+        });
+    }
+}
+
+
+    
+
+
+    
+</script>
+</body>
+</html>

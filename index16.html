@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+<body>
+    <input type="number" id="number1">
+    <br>
+    <input type="number" id="number2">
+    <br>
+    <button id="button1">클릭</button>
+    <p id="demo"></p>
+    <script>
+    document.getElementById("button1").onclick = getRandNumber;
+
+    function getRandNumber() {
+
+        var num1 = Number(document.getElementById("number1").value);
+        var num2 = Number(document.getElementById("number2").value);
+
+        var rand = Math.floor(Math.random() * (num2 - num1 + 1)) + num1;
+
+        document.getElementById("demo").innerHTML = rand;
+    }
+    
+    
+    </script>
+</body>
+</html>

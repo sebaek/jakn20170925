@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <input type="number" name="" id="input1">
+    <br>
+    <input type="number" name="" id="input2">
+    <br>
+    <button id="button1">큰값</button>
+    <button id="button2">작은값</button>
+    <p id="demo"></p>
+    <script>
+    document.getElementById("button1").onclick = showMax;
+    document.getElementById("button2").onclick = showMin;
+    function showMin() {
+        
+        var num1 = Number(document.getElementById("input1").value);
+        var num2 = Number(document.getElementById("input2").value);
+
+        // 작은값 버튼 눌렀을 경우
+        
+        if (num1 < num2) {
+            document.getElementById("demo").innerHTML = num1;
+        } else if (num1 > num2) {
+            document.getElementById("demo").innerHTML = num2;
+        } else {
+            document.getElementById("demo").innerHTML = "같다";
+        }
+    }
+    function showMax() {
+        var num1 = Number(document.getElementById("input1").value);
+        var num2 = Number(document.getElementById("input2").value);
+
+        // 큰값 버튼 눌렀을 경우
+        if (num1 > num2) {
+            document.getElementById("demo").innerHTML = num1;
+        } else if (num1 < num2) {
+            document.getElementById("demo").innerHTML = num2;
+        } else {
+            document.getElementById("demo").innerHTML = "같다";
+        }
+    }
+
+    
+
+    
+    </script>
+</body>
+</html>

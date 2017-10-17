@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.section {
+    display: inline-block;
+    border: 1px solid black;
+    padding: 17px;
+    margin: 2px;
+}
+</style>
+</head>
+<body>
+<div id="div1"></div>
+
+<script>
+var txt = "";
+for (var num = 2; num <= 9; num++) {
+    txt += "<div class='section'>";
+    for (var i = 1; i <= 9; i++) {
+        txt += "<p>" + num + " X " + i + " = " + (i*num) + "</p>";
+    }
+    txt += "</div>";
+}
+document.getElementById("div1").innerHTML = txt;
+
+</script>
+</body>
+</html>

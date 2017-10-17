@@ -1,0 +1,20 @@
+<!doctype html>
+<html>
+<body>
+    <input id="input1" type="text" name=""><br>
+    <input id="input2" type="text" name=""><br>
+    <button id="button1">더해라!!</button>
+    <p id="demo"></p>
+
+    <script>
+    document.getElementById("button1").onclick = concatenate;
+    function concatenate() {
+        var text1 = document.getElementById("input1").value;
+        var text2 = document.getElementById("input2").value;
+        var result = text1 + text2;
+
+        document.getElementById("demo").innerHTML = result;
+    }
+    </script>
+</body>
+</html>

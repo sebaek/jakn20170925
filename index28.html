@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+</head>
+<body>
+    <input type="text" name="" id="input1">
+    <br>
+    <button id="button1">클릭</button>
+    <p id="demo"></p>
+    <script>
+    document.getElementById("button1").onclick = show;
+    function show() {
+
+        var text = document.getElementById("input1").value;
+        var array = text.split(",");
+        console.log(array);
+
+        var neg = 0;
+
+        for (var i = 0; i < array.length; i++) {
+            var num = Number(array[i]);
+            console.log(num);
+            if (num == 0) {
+                document.getElementById("demo").innerHTML = 0;
+
+                return;
+            } else if (num < 0) {
+                neg++;
+            }
+        }
+
+        if (neg % 2 == 0) {
+            document.getElementById("demo").innerHTML = "양수입니다.";
+        } else {
+            document.getElementById("demo").innerHTML = "음수입니다.";
+        }
+
+    }
+
+    
+    
+    
+    </script>
+</body>
+</html>

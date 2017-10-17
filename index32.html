@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script>
+        window.onload = function () {
+            document.getElementById("btn1").onclick =
+                function () {
+                    var results = document.getElementById('results');
+                    var originTxt = results.innerHTML;
+                    results.innerHTML = originTxt + '<i class="fa fa-refresh fa-spin fa-3x fa-fw"></i><span class="sr-only">Loading...</span>';
+                    var r = new XMLHttpRequest();
+                    r.open("GET", "http://www.filltext.com?rows=3&f={firstName}", true);
+                    r.onreadystatechange = function () {
+                        if (r.readyState != 4 || r.status != 200) return;
+                        console.log(r.responseText);
+                        var data = JSON.parse(r.responseText);
+                        for (i = 0; i < data.length; i++) {
+                            originTxt += '<li>' + data[i].f + '</li>'
+                        }
+                        results.innerHTML = originTxt;
+                    };
+                    r.send();
+                };
+
+
+        };
+
+
+    </script>
+</head>
+<ul id="results"></ul>
+<button id="btn1">클릭</button>
+
+
+<body>
+
+</body>
+
+</html>

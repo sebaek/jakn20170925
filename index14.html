@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+<body>
+    <input type="text" name="" id="text1">
+    <br>
+    <input type="text" name="" id="text2">
+    <br>
+    <button id="button1">클릭</button>
+
+    <p id="demo"></p>
+
+    <script>
+    document.getElementById("button1").onclick = searching;
+
+    function searching() {
+        var text1 = document.getElementById("text1").value;
+        var text2 = document.getElementById("text2").value;
+
+        document.getElementById("demo").innerHTML
+            = text2.indexOf(text1);
+    }
+    </script>
+</body>
+</html>

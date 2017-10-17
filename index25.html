@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+    <input type="number" name="" id="input1">
+    <br>
+    <button id="button1" onclick="show();">보여줘!!</button>
+    <div id="result"></div>
+    <script>
+
+    function show() {
+        var number = document.getElementById("input1").value;
+        if (number < 2 || number > 9) {
+            document.getElementById("result").innerHTML = 
+            "2와 9사이의 값을 넣으세요";
+            return;
+        }
+        var txt = "";
+        for (var i = 1; i <= 9; i++) {
+            // number X i = (number*i) <br>
+            txt += number + " X " + i + " = " + (number*i) + "<br>";
+        }
+        document.getElementById("result").innerHTML = txt;
+    }
+    
+    </script>
+</body>
+</html>

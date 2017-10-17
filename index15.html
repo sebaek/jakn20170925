@@ -1,0 +1,73 @@
+<!doctype html>
+<html>
+<body>
+    <input type="text" name="" id="text1">
+    <br>
+    <input type="text" name="" id="text2">
+    <br>
+    <button id="button1">더하기</button>
+    <button id="button2">빼기</button>
+    <button id="button3">곱하기</button>
+    <button id="button4">나누기</button>
+    <button id="button5">나머지</button>
+    <p id="demo"></p>
+
+    <script>
+    document.getElementById("button1").onclick = add;
+    document.getElementById("button2").onclick = differ;
+    document.getElementById("button3").onclick = product;
+    document.getElementById("button4").onclick = divide;
+    document.getElementById("button5").onclick = reminder;
+
+    function add() {
+
+        var str1 = document.getElementById("text1").value;
+        var str2 = document.getElementById("text2").value;
+        document.getElementById("demo").innerHTML
+         = parseFloat(str1) + parseFloat(str2);
+
+    }
+
+    function differ() {
+
+        var str1 = document.getElementById("text1").value;
+        var str2 = document.getElementById("text2").value;
+        document.getElementById("demo").innerHTML
+         = str1 - str2;
+
+    }
+
+    function product() {
+
+        var str1 = document.getElementById("text1").value;
+        var str2 = document.getElementById("text2").value;
+        document.getElementById("demo").innerHTML
+         = str1 * str2;
+
+    }
+
+    function divide() {
+
+        var str1 = document.getElementById("text1").value;
+        var str2 = document.getElementById("text2").value;
+        document.getElementById("demo").innerHTML
+         = str1 / str2;
+
+    }
+
+    function reminder() {
+
+        var str1 = document.getElementById("text1").value;
+        var str2 = document.getElementById("text2").value;
+        document.getElementById("demo").innerHTML
+         = str1 % str2;
+
+    }
+
+    
+    
+    </script>
+</body>
+
+
+</html>

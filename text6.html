@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+    <title>파라미터와 리턴없는 함수 사용</title>
+</head>
+<body>
+<input type="text" name="" id="text1"><br>
+<input type="text" name="" id="text2"><br>
+<button id="myBtn">더해라!!!</button>
+<p id="demo"></p>
+    
+<script>
+
+    document.getElementById("myBtn").onclick = concatenate;
+    function concatenate() {
+        var text1 = document.getElementById("text1").value;
+        var text2 = document.getElementById("text2").value;
+        var result = text1 + text2;
+        document.getElementById("demo").innerHTML = result;
+    }
+
+</script>
+</body>
+</html>
