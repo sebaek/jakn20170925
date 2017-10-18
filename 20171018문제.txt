@@ -176,6 +176,60 @@ javascript
 
 . boolean 타입의 변수가 가질 수 있는 값은?
 
+. 조건문(if)과 반복문(for, while), switch case 문의 사용법을 확인하세요.
 
+-------------------------------------------------
+종합문제
+-------------------------------------------------
+. 텍스트를 입력받아 대문자는 소문자로
+소문자는 대문자로 변환한 결과를 출력하는
+문서를 작성하세요.
 
+. 콤마(,)로 구분된 여러 수(정수만)를 입력받아
+가장 큰 값과 가장 작은 값의 차이를 출력하는
+문서를 작성하세요.
 
+. 두 양의 정수를 입력받아 최대공약수(GCD)를
+출력하는 문서를 작성하세요.
+
+_____________________________________________________________________
+var results = document.getElementById('results');
+var r = new XMLHttpRequest();
+r.open("GET", "http://www.filltext.com?rows=3&f={firstName}", true);
+r.onreadystatechange = function () {
+  if (r.readyState != 4 || r.status != 200) return;
+  var data = JSON.parse(r.responseText);
+  for (i=0;i<data.length;i++){
+        results.innerHTML += '<li>'+data[i].f+'</li>'
+  }
+};
+r.send();
+_____________________________________________________________________
+. 위 코드는 filltext.com에서 json 데이터 3개를 배열로 가져오는 코드입니다.
+버튼을 누를 때마다 실행되도록 하고 결과가 문서에 출력 되도록 하세요.
+필요할 경우 코드를 적절하게 수정하세요.
+
+_____________________________________________________________________
+function getData() {
+    var url = "http://www.filltext.com/?callback=?";
+  $.getJSON( url, {
+    'rows': 4,
+    'fname': '{firstName}',
+    'lname': '{lastName}',
+    'tel': '{phone|format}',
+  })
+  .done(function( data ) {
+    $.each( data, function( i, item ) {
+        var html = 
+            "<td>" + item.fname + "</td>" +
+            "<td>" + item.lname + "</td>" +
+            "<td>" + item.tel + "</td>";
+          $("<tr/>").html(html).appendTo("#records");
+    });
+  });
+}
+_____________________________________________________________________
+. 위 코드는 filltext.com에서 json 데이터 4개를 배열로 가져오는 코드입니다.
+각 json데이터는 fname, lname, tel 속성을 가지고 있습니다.
+버튼을 누를 때마다 실행되도록 하고 결과가 문서에 출력 되도록 하세요.
+필요할 경우 코드를 적절하게 수정하세요.
