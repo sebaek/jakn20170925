@@ -1,0 +1,44 @@
+<!--큰값 빼기 작은값 -->
+<!doctype html>
+<html>
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#button1").click(function () {
+                var txt = $("#input1").val();
+                var txtArray = txt.split(",");
+                var max = Number.MIN_VALUE;
+                var min = Number.MAX_VALUE;
+                
+                for (var i = 0; i < txtArray.length; i++) {
+                    var num = Number(txtArray[i]);
+                    if (max < num) {
+                        max = num;
+                    }
+
+                    if (num < min) {
+                        min = num;
+                    }
+
+                }
+
+                $("#demo").html(max - min);
+            });
+
+
+        });
+    </script>
+</head>
+
+<body>
+    <input type="text" name="" id="input1">
+    <br>
+    <button id="button1">클릭</button>
+    <br>
+    <p id="demo"></p>
+
+</body>
+
+</html>

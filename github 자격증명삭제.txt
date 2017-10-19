@@ -1,0 +1,11 @@
+﻿
+삭제
+제어판 > 사용자 계정및 가족 보호 > 자격 증명 관리자
+
+
+실행
+git config --global credential.helper store
+git config --global --unset credential.helper
+
+
+

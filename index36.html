@@ -1,0 +1,42 @@
+<!--최대공약수 -->
+<!doctype html>
+<html>
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#button1").click(function () {
+                var num1 = Number($("#input1").val());
+                var num2 = Number($("#input2").val());
+
+                var gcd = function (a, b) {
+                    if (!b) {
+                        return a;
+                    }
+
+                    return gcd(b, a % b);
+                };
+
+                $("#demo").text(gcd(num1, num2));
+
+
+            });
+
+
+        });
+    </script>
+</head>
+
+<body>
+    <input type="text" name="" id="input1">
+    <br>
+    <input type="text" name="" id="input2">
+    <br>
+    <button id="button1">클릭</button>
+    <br>
+    <p id="demo"></p>
+
+</body>
+
+</html>

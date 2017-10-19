@@ -1,0 +1,42 @@
+
+<!--대소문자 변환 -->
+<!doctype html>
+<html>
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#button1").click(function () {
+                var txt = $("#input1").val();
+                var txtArray = txt.split("");
+                for (var i = 0; i < txtArray.length; i++) {
+                    console.log(txtArray[i]);
+                    if ("a" <= txtArray[i] && txtArray[i] <= "z") {
+                        txtArray[i] = txtArray[i].toUpperCase();
+                        console.log(txtArray[i] + " toupper");
+                    } else if ("A" <= txtArray[i] && txtArray[i] <= "Z") {
+                        txtArray[i] = txtArray[i].toLowerCase();
+                        console.log(txtArray[i] + " tolower");
+                    }
+
+                }
+                $("#demo").html(txtArray.join(""));
+
+            });
+
+
+        });
+    </script>
+</head>
+
+<body>
+    <input type="text" name="" id="input1">
+    <br>
+    <button id="button1">클릭</button>
+    <br>
+    <p id="demo"></p>
+
+</body>
+
+</html>
